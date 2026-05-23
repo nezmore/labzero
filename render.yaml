@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: bloodtransfusionservice-api
+    runtime: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn cloud_app:app"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.8
+      - key: DATABASE_URL
+        value: postgresql://bloodtransfusionservice_user:NHANFq1httMcsPGoNPMHWfO5tlavk6SV@dpg-d88ne43eo5us7384h7f0-a/bloodtransfusionservice
